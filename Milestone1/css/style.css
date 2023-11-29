@@ -32,6 +32,12 @@ li{
     align-self: flex-start;
     padding-top: .625rem;
 }
+.align-end{
+    align-self: flex-end;
+}
+.column{
+    flex-direction: column;
+}
 /*utils*/
 
 /*background*/
@@ -157,9 +163,30 @@ nav{
     padding-left: .9375rem;
 }
 .chat-window{
+    height: calc(100% - 8.75rem);
     background-image: url("../img/mine.jpg");
-    height: calc(100% - 4.375rem);
+    overflow-y: scroll;
 }
+.input-bar{
+    height: 4.375rem;
+    padding: .625rem 0;
+    background-color: #f3eeea;
+}
+.input-bar input{
+    height: 100%;
+}
+.text-area{
+    flex: 1;
+}
+.btn-input{
+    width: 6.25rem;
+    border: none;
+    cursor: pointer;
+}
+.btn-input i {
+    font-size: 1.5625rem;
+}
+
 /*finestra chat*/
 
 /*main*/
