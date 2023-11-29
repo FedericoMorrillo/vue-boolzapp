@@ -1,6 +1,17 @@
 'use strict'
 
-contacts: [
+const {createApp} = Vue;
+
+createApp({
+    data(){
+        return{
+        user: [
+    {
+        name: 'Nome Utente',
+        avatar: './img/avatar_io.jpg',
+    }
+        ],
+        contacts: [
     {
         name: 'Michele',
         avatar: './img/avatar_1.png',
@@ -162,5 +173,10 @@ contacts: [
             }
         ],
     }
-]
+        ]
+        }
+    }
+}).mount('#app');
+
+
 
