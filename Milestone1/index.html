@@ -38,7 +38,7 @@
 
                 <!--header menu-->
                 <div class="head-bar flex">
-                    <div class="user flex">
+                    <div class="align flex">
                         <div class="box">
                             <img :src="user[0].avatar" alt="user avatar">
                         </div>
@@ -60,8 +60,8 @@
                 <!--/header menu-->
 
                 <!--sezione attiva notifiche-->
-                <div class="notifications flex">
-                    <div class="box flex">
+                <div class="notifications align flex">
+                    <div class="box align flex">
                         <i class="fa-solid fa-bell-slash" style="color: #b1b1b1;"></i>
                     </div>
                     <div class="notification">
@@ -77,13 +77,33 @@
                 <!--/sezione attiva notifiche-->
 
                 <!--sezione ricerca-->
-                <nav class="flex" >
-                        <button class="search-btn">
-                            <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
-                        </button>
-                        <input class="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                <nav class="flex">
+                    <button class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                    </button>
+                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat">
                 </nav>
                 <!--/sezione ricerca-->
+
+                <!--lista contatti-->
+                    <div class="contacts-list">
+                        <ul>
+                            <li class="card flex align" v-for="(contact, index) in contacts">
+                                <div class="box">
+                                    <img :src="contact.avatar" :alt="contact.name">
+                                </div>
+                                <div class="contacts-info align-start">
+                                    <div>
+                                     {{contact.name}}   
+                                    </div>
+                                    <div class="subtitle">
+                                        Ultimo messaggio inviato
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                <!--/lista contatti-->
 
             </div>
             <!--/menu a sinistra-->
@@ -91,13 +111,20 @@
             <div class="chat">
                 <!--header chat-->
                 <div class="head-bar l-border flex">
-                    <div class="user flex">
+                    <div class="align flex">
                         <div class="box">
                             <img :src="contacts[0].avatar" alt="user avatar">
                         </div>
-                        <div class="contacts-name">{{contacts[0].name}}</div>
+                        <div class="contacts-info">
+                            <div>
+                                {{contacts[0].name}}
+                            </div>
+                            <div class="subtitle">
+                                Ultimo accesso alle
+                            </div>
+                        </div>
                     </div>
-                    <div class="option flex">                             
+                    <div class="option flex">
                         <div class="head-icon">
                             <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
                         </div>
@@ -110,6 +137,12 @@
                     </div>
                 </div>
                 <!--/header chat-->
+
+                <!--main chat-->
+                <div class="chat-window">
+
+                </div>
+                <!--/main chat-->
             </div>
         </main>
     </div>
