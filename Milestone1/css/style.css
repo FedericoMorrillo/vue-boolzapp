@@ -9,6 +9,7 @@
 /*typography*/
 body{
     font-family: 'Lato', sans-serif;
+    font-size: .875rem;
 }
 /*typography*
 
@@ -45,8 +46,9 @@ z-index: -2;
     margin: 0 auto;
     display: flex;
 }
+/*menu contatti*/
 .menu{
-    width: 30%;
+    width: 35%;
     height: 100%;
 }
 .head-bar{
@@ -59,23 +61,72 @@ z-index: -2;
 .user{
     align-items: center;
 }
-.photo{
+.box{
     width: 3.125rem;
     height: 3.125rem;
 }
-.photo img{
+.box img{
     width: 100%;
     border-radius: 100%;
 }
-.head-icon{
-    margin-right: .625rem;
+.notifications .box{
+    background-color: white;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
 }
-.head-icon i{
-    font-size: 20px;
+i{
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.head-icon{
+    margin-right: .9375rem;
+}
+.notifications{
+    height: 5rem;
+    background-color: #8edafc;
+    padding: 0 1.25rem;
+    align-items: center;
+}
+.notification{
+    padding-left: .625rem;
+}
+.notification a{
+    color: #4f7485;
+}
+nav{
+    height: 3.125rem;
+    background-color: #fafafa;
+    padding: .625rem;
+    align-items: center;
+}
+.search{
+    flex: 1;
+    border: 1px solid #ffffff;
+    height: 100%;
+}
+.search-btn{
+    width: 4.6875rem;
+    height: 100%;
+    border: 1px solid #f5f5f5;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.search-btn i{
+    font-size: .875rem;
+}
+/*menu contatti*/
+/*finestra chat*/
+.l-border{
+    border-left: 1px solid #d6d6d6;
 }
 .chat{
-    width: 70%;
+    width: 65%;
     height: 100%;
     background-color: blue;
 }
+.contacts-name{
+    padding-left: .9375rem;
+}
+/*finestra chat*/
 /*main*/
