@@ -146,7 +146,7 @@
                     <button class="btn-input">
                         <i class="fa-regular fa-face-smile" style="color: #6b7376;"></i>
                     </button>
-                    <input class="text-area" type="text">
+                    <input class="text-area" type="text" v-model="inputText" @keyup.enter="addMessage()">
                     <button class="btn-input">
                         <i class="fa-solid fa-microphone" style="color: #6b7376;"></i>
                     </button>

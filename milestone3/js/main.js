@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
       currentItem: 0,
+      inputText: "",
       user: [
         {
           name: "Nome Utente",
@@ -34,7 +35,7 @@ createApp({
               date: "10/01/2020 16:15:22",
               message: "Tutto fatto!",
               status: "received",
-              time:"16:15",
+              time: "16:15",
             },
           ],
         },
@@ -201,7 +202,22 @@ createApp({
   methods: {
     // funzione che al click prende l' indice dell' oggetto e salva il valore dentro currentItem
     selectContact(index) {
-        this.currentItem = index;
+      this.currentItem = index;
     },
-  }
+    //inviamo un messaggio
+    addMessage() {
+      if (this.inputText.trim() !== "") {
+        // con i propri metodi otteniamo ora e minuti
+        const currentTime = new Date();
+        const time = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
+
+        this.contacts[this.currentItem].messages.push({
+          message: this.inputText,
+          status: "sent",
+          time: time,
+        });
+      }
+      this.inputText = "";
+    },
+  },
 }).mount("#app");
