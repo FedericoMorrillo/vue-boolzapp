@@ -165,7 +165,7 @@ nav{
 .message{
     width: 18.75rem;
     height: 3.125rem;
-    padding: 0 .9375rem;
+    padding: .3125rem .9375rem;
     margin-bottom: .625rem;
     border-radius: .625rem;
     flex-direction: column;

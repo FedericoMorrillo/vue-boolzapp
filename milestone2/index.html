@@ -80,9 +80,9 @@
 
                 <!--lista contatti-->
                 <div class="contacts-list">
-                    <ul>
+                    <ul>                                                                <!--al click ottiene l' index-->
                         <li class="card flex align" v-for="(contact, index) in contacts" @click="selectContact(index)"
-                            :class="{'selected': index === currentItem}">
+                            :class="{'selected': index === currentItem}"> <!-- aggiunge la classe selected al' indice visualizzato-->
                             <div class="box">
                                 <img :src="contact.avatar" :alt="contact.name">
                             </div>
@@ -133,12 +133,10 @@
                 </div>
                 <!--/header chat-->
 
-                <!--main chat-->
-                <div class="chat-window flex column">
+                <!--main chat-->                                                   <!--avendo la classe CSS con lo stesso nome della-->
+                <div class="chat-window flex column">                              <!--proprietà status aggiunge la classe === allo status-->
                     <div class="message flex" v-for="sms in contacts[currentItem].messages" :class="sms.status">
-                        <div>
                             {{sms.message}}
-                        </div>
                         <div class="subtitle sms-time">
                             {{sms.time}}
                         </div>
