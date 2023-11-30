@@ -24,11 +24,6 @@
 </head>
 
 <body>
-    <!--sfondo-->
-    <div class="background sfondo1"></div>
-    <div class="background sfondo2"></div>
-    <!--/sfondo-->
-
     <!--finestra-->
     <div id="app">
 
@@ -42,7 +37,7 @@
                         <div class="box">
                             <img :src="user[0].avatar" alt="user avatar">
                         </div>
-                        <div>{{user[0].name}}</div>
+                        <h4 class="contacts-info">{{user[0].name}}</h4>
                     </div>
                     <div class="option flex">
                         <div class="head-icon">
@@ -68,9 +63,7 @@
                         <div>
                             Ricevi notifiche di nuovi messaggi
                         </div>
-                        <div>
                             <a href="">Attiva notifiche desktop</a>
-                        </div>
                     </div>
 
                 </div>
@@ -93,9 +86,9 @@
                                 <img :src="contact.avatar" :alt="contact.name">
                             </div>
                             <div class="contacts-info align-start">
-                                <div>
+                                <h4>
                                     {{contact.name}}
-                                </div>
+                                </h4>
                                 <div class="subtitle">
                                     Ultimo messaggio inviato
                                 </div>
@@ -117,9 +110,9 @@
                             <img :src="contacts[0].avatar" alt="user avatar">
                         </div>
                         <div class="contacts-info">
-                            <div>
+                            <h4>
                                 {{contacts[0].name}}
-                            </div>
+                            </h4>
                             <div class="subtitle">
                                 Ultimo accesso alle
                             </div>
