@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--/font awesome-->
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--/font-->
+
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--/css-->
+</head>
+
+<body>
+    <!--finestra-->
+    <div id="app">
+
+        <main class="container">
+            <!--menu a sinistra-->
+            <div class="menu">
+
+                <!--header menu-->
+                <div class="head-bar flex">
+                    <div class="align flex">
+                        <div class="box">
+                            <img :src="user[0].avatar" alt="user avatar">
+                        </div>
+                        <h4 class="contacts-info">{{user[0].name}}</h4>
+                    </div>
+                    <div class="option flex">
+                        <div class="head-icon">
+                            <i class="fa-solid fa-circle-notch" style="color: #b1b1b1;"></i>
+                        </div>
+                        <div class="head-icon">
+                            <i class="fa-solid fa-message" style="color: #b1b1b1;"></i>
+                        </div>
+                        <div class="head-icon">
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <!--/header menu-->
+
+                <!--sezione attiva notifiche-->
+                <div class="notifications align flex">
+                    <div class="box align flex">
+                        <i class="fa-solid fa-bell-slash" style="color: #b1b1b1;"></i>
+                    </div>
+                    <div class="notification">
+                        <div>
+                            Ricevi notifiche di nuovi messaggi
+                        </div>
+                            <a href="">Attiva notifiche desktop</a>
+                    </div>
+
+                </div>
+                <!--/sezione attiva notifiche-->
+
+                <!--sezione ricerca-->
+                <nav class="flex">
+                    <button class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                    </button>
+                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                </nav>
+                <!--/sezione ricerca-->
+
+                <!--lista contatti-->
+                <div class="contacts-list">
+                    <ul>
+                        <li class="card flex align" v-for="(contact, index) in contacts">
+                            <div class="box">
+                                <img :src="contact.avatar" :alt="contact.name">
+                            </div>
+                            <div class="contacts-info align-start">
+                                <h4>
+                                    {{contact.name}}
+                                </h4>
+                                <div class="subtitle">
+                                    Ultimo messaggio inviato
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--/lista contatti-->
+
+            </div>
+            <!--/menu a sinistra-->
+
+            <div class="chat">
+
+                <!--header chat-->
+                <div class="head-bar l-border flex">
+                    <div class="align flex">
+                        <div class="box">
+                            <img :src="contacts[0].avatar" alt="user avatar">
+                        </div>
+                        <div class="contacts-info">
+                            <h4>
+                                {{contacts[0].name}}
+                            </h4>
+                            <div class="subtitle">
+                                Ultimo accesso alle
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option flex">
+                        <div class="head-icon">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                        </div>
+                        <div class="head-icon">
+                            <i class="fa-solid fa-paperclip" style="color: #b1b1b1;"></i>
+                        </div>
+                        <div class="head-icon">
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+                        </div>
+                    </div>
+                </div>
+                <!--/header chat-->
+
+                <!--main chat-->
+                <div class="chat-window">
+                </div>
+                <div class="input-bar flex align-end">
+                    <button class="btn-input">
+                        <i class="fa-regular fa-face-smile" style="color: #6b7376;"></i>
+                    </button>
+                        <input class="text-area" type="text">
+                    <button class="btn-input">
+                        <i class="fa-solid fa-microphone" style="color: #6b7376;"></i>
+                    </button>
+                </div>
+                <!--/main chat-->
+            </div>
+        </main>
+    </div>
+    <!--/finestra-->
+
+    <!--vue-js-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--/vue.js-->
+    <!--js-->
+    <script src="js/main.js"></script>
+    <!--/js-->
+</body>
+
+</html>
