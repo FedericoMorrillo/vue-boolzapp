@@ -35,6 +35,9 @@ li{
 .align-end{
     align-self: flex-end;
 }
+.align-self{
+    align-self: center;
+}
 .column{
     flex-direction: column;
 }
@@ -138,6 +141,9 @@ nav{
     height: 5rem;
     padding: 0 20px;
 }
+.selected{
+    background-color: #e9ebeb;
+}
 /*menu contatti*/
 
 /*finestra chat*/
@@ -154,6 +160,30 @@ nav{
     height: calc(100% - 8.75rem);
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
+    padding:20px 100px;
+}
+.message{
+    width: 18.75rem;
+    height: 3.125rem;
+    padding: 0 .9375rem;
+    margin-bottom: .625rem;
+    border-radius: .625rem;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.sms-time{
+    font-size: .625rem;
+    position: absolute;
+    right: .3125rem;
+    bottom: .3125rem;
+}
+.sent{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+.received{
+    background-color: white;
 }
 .input-bar{
     height: 4.375rem;

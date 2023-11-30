@@ -63,7 +63,7 @@
                         <div>
                             Ricevi notifiche di nuovi messaggi
                         </div>
-                            <a href="">Attiva notifiche desktop</a>
+                        <a href="">Attiva notifiche desktop</a>
                     </div>
 
                 </div>
@@ -81,7 +81,8 @@
                 <!--lista contatti-->
                 <div class="contacts-list">
                     <ul>
-                        <li class="card flex align" v-for="(contact, index) in contacts">
+                        <li class="card flex align" v-for="(contact, index) in contacts" @click="selectContact(index)"
+                            :class="{'selected': index === currentItem}">
                             <div class="box">
                                 <img :src="contact.avatar" :alt="contact.name">
                             </div>
@@ -107,11 +108,11 @@
                 <div class="head-bar l-border flex">
                     <div class="align flex">
                         <div class="box">
-                            <img :src="contacts[0].avatar" alt="user avatar">
+                            <img :src="contacts[currentItem].avatar" alt="user avatar">
                         </div>
                         <div class="contacts-info">
                             <h4>
-                                {{contacts[0].name}}
+                                {{contacts[currentItem].name}}
                             </h4>
                             <div class="subtitle">
                                 Ultimo accesso alle
@@ -133,13 +134,21 @@
                 <!--/header chat-->
 
                 <!--main chat-->
-                <div class="chat-window">
+                <div class="chat-window flex column">
+                    <div class="message flex" v-for="sms in contacts[currentItem].messages" :class="sms.status">
+                        <div>
+                            {{sms.message}}
+                        </div>
+                        <div class="subtitle sms-time">
+                            {{sms.time}}
+                        </div>
+                    </div>
                 </div>
                 <div class="input-bar flex align-end">
                     <button class="btn-input">
                         <i class="fa-regular fa-face-smile" style="color: #6b7376;"></i>
                     </button>
-                        <input class="text-area" type="text">
+                    <input class="text-area" type="text">
                     <button class="btn-input">
                         <i class="fa-solid fa-microphone" style="color: #6b7376;"></i>
                     </button>
