@@ -6,7 +6,7 @@ createApp({
   data() {
     return {
       currentItem: 0,
-      keysearch:"",
+      keysearch: "",
       inputText: "",
       user: [
         {
@@ -19,6 +19,7 @@ createApp({
           name: "Michele",
           avatar: "./img/avatar_1.jpg",
           visible: true,
+          lastMessageReceived: "16:15",
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -44,6 +45,7 @@ createApp({
           name: "Fabio",
           avatar: "./img/avatar_2.jpg",
           visible: true,
+          lastMessageReceived: "16:30",
           messages: [
             {
               date: "20/03/2020 16:30:00",
@@ -69,6 +71,7 @@ createApp({
           name: "Samuele",
           avatar: "./img/avatar_3.jpg",
           visible: true,
+          lastMessageReceived: "16:15",
           messages: [
             {
               date: "28/03/2020 10:10:40",
@@ -94,6 +97,7 @@ createApp({
           name: "Alessandro B.",
           avatar: "./img/avatar_4.jpg",
           visible: true,
+          lastMessageReceived: "15:50",
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -113,6 +117,7 @@ createApp({
           name: "Alessandro L.",
           avatar: "./img/avatar_5.jpg",
           visible: true,
+          lastMessageReceived: "15:50",
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -132,6 +137,7 @@ createApp({
           name: "Claudia",
           avatar: "./img/avatar_6.jpg",
           visible: true,
+          lastMessageReceived: "15:50",
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -157,6 +163,7 @@ createApp({
           name: "Federico",
           avatar: "./img/avatar_7.jpg",
           visible: true,
+          lastMessageReceived: "15:50",
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -176,6 +183,7 @@ createApp({
           name: "Davide",
           avatar: "./img/avatar_8.jpg",
           visible: true,
+          lastMessageReceived: "15:51",
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -220,7 +228,7 @@ createApp({
     //inviamo un messaggio
     addMessage() {
       if (this.inputText.trim() !== "") {
-        const time =  this.actualTime();
+        const time = this.actualTime();
         this.contacts[this.currentItem].messages.push({
           message: this.inputText,
           status: "sent",
@@ -229,8 +237,6 @@ createApp({
         setTimeout(() => {
           this.receivedMessage();
         }, 1000);
-        
-
       }
       this.inputText = "";
     },
@@ -238,21 +244,22 @@ createApp({
     //messaggio di risposta
     receivedMessage() {
       const time = this.actualTime();
-
+      this.contacts[this.currentItem].lastMessageReceived = time;
       this.contacts[this.currentItem].messages.push({
         message: "Ok",
         status: "received",
         time: time,
-      })
+      });
     },
 
     //barra di ricerca
-    searchContact(){
+    searchContact() {
       //itera nell' array
-      this.contacts.forEach( contact => {
-        contact.visible = contact.name.toLowerCase().includes(this.keysearch.toLowerCase());
+      this.contacts.forEach((contact) => {
+        contact.visible = contact.name
+          .toLowerCase()
+          .includes(this.keysearch.toLowerCase());
       });
-       
     },
   },
 }).mount("#app");

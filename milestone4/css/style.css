@@ -140,9 +140,15 @@ nav{
 .card{
     height: 5rem;
     padding: 0 20px;
+    position: relative;
 }
 .selected{
     background-color: #e9ebeb;
+}
+.last-message{
+position: absolute;
+top: .3125rem;
+right: .9375rem;
 }
 /*menu contatti*/
 

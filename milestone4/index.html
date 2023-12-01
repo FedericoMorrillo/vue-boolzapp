@@ -94,6 +94,7 @@
                                     Ultimo messaggio inviato
                                 </div>
                             </div>
+                            <div class="subtitle last-message">{{contact.lastMessageReceived}}</div>
                         </li>
                     </ul>
                 </div>
@@ -115,7 +116,7 @@
                                 {{contacts[currentItem].name}}
                             </h4>
                             <div class="subtitle">
-                                Ultimo accesso alle
+                                Ultimo accesso alle {{contacts[currentItem].lastMessageReceived}}
                             </div>
                         </div>
                     </div>
