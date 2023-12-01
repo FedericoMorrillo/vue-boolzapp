@@ -204,20 +204,45 @@ createApp({
     selectContact(index) {
       this.currentItem = index;
     },
+
+    //orario
+    actualTime() {
+      // con i propri metodi otteniamo ora e minuti, convertiamo da numero in stringa e utiliziamo padstart per avere sempre 2 numeri
+      // in questo caso se l' orario fosse da mezzanotte alle 9 di mattina invece di dare solamente un numero riempie lo spazio con 0
+      // ES:  9:30 di mattina -->  padstart(0)9:30
+      const currentTime = new Date();
+      const hour = currentTime.getHours().toString().padStart(2, "0");
+      const minutes = currentTime.getMinutes().toString().padStart(2, "0");
+      return `${hour}:${minutes}`;
+    },
+
     //inviamo un messaggio
     addMessage() {
       if (this.inputText.trim() !== "") {
-        // con i propri metodi otteniamo ora e minuti
-        const currentTime = new Date();
-        const time = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
-
+        const time =  this.actualTime();
         this.contacts[this.currentItem].messages.push({
           message: this.inputText,
           status: "sent",
           time: time,
         });
+        setTimeout(() => {
+          this.receivedMessage();
+        }, 1000);
+        
+
       }
       this.inputText = "";
     },
+
+    //messaggio di risposta
+    receivedMessage() {
+      const time = this.actualTime();
+
+      this.contacts[this.currentItem].messages.push({
+        message: "Ok",
+        status: "received",
+        time: time,
+      })
+    }
   },
 }).mount("#app");

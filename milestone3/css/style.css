@@ -160,12 +160,12 @@ nav{
     height: calc(100% - 8.75rem);
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
+    word-wrap: break-word;
     padding:20px 100px;
 }
 .message{
     width: 18.75rem;
-    height: 3.125rem;
-    padding: .3125rem .9375rem;
+    padding: .9375rem .9375rem;
     margin-bottom: .625rem;
     border-radius: .625rem;
     flex-direction: column;
