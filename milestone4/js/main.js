@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
       currentItem: 0,
+      keysearch:"",
       inputText: "",
       user: [
         {
@@ -243,6 +244,15 @@ createApp({
         status: "received",
         time: time,
       })
-    }
+    },
+
+    //barra di ricerca
+    searchContact(){
+      //itera nell' array
+      this.contacts.forEach( contact => {
+        contact.visible = contact.name.toLowerCase().includes(this.keysearch.toLowerCase());
+      });
+       
+    },
   },
 }).mount("#app");

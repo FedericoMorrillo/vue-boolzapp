@@ -74,14 +74,14 @@
                     <button class="search-btn">
                         <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
                     </button>
-                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="keysearch" @keyup="searchContact">
                 </nav>
                 <!--/sezione ricerca-->
 
                 <!--lista contatti-->
                 <div class="contacts-list">
                     <ul>                                                                <!--al click ottiene l' index-->
-                        <li class="card flex align" v-for="(contact, index) in contacts" @click="selectContact(index)"
+                        <li class="card flex align" v-for="(contact, index) in contacts" @click="selectContact(index)" v-show="contact.visible"
                             :class="{'selected': index === currentItem}"> <!-- aggiunge la classe selected al' indice visualizzato-->
                             <div class="box">
                                 <img :src="contact.avatar" :alt="contact.name">
